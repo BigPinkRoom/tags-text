@@ -1,11 +1,13 @@
 <template>
   <v-app>
     <v-main>
-      <TagsText
-        align="center"
-        :text="textContent"
-        title="Текстовый заголовок"
-      />
+      <div class="tags-text__wrapper">
+        <TagsText
+          align="center"
+          :text="textContent"
+          title="Текстовый заголовок"
+        />
+      </div>
     </v-main>
   </v-app>
 </template>
@@ -48,3 +50,14 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.tags-text {
+  &__wrapper {
+    background-color: #f0f0f0;
+    margin: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+}
+</style>
