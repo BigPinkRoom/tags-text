@@ -1,5 +1,5 @@
 <template>
-  <div class="tags-text">
+  <div class="tags-text" :class="styleObject">
     <div class="tags-text__title">{{ title }}</div>
     <div class="tags-text__wrapper">
       <div
@@ -38,18 +38,33 @@ export default {
       default: '',
     },
   },
+  computed: {
+    styleObject() {
+      return {
+        'tags-text--left': this.align === 'left',
+      };
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .tags-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &--left {
+    align-items: flex-start;
+  }
   &__item {
     display: flex;
   }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
-    height: 1em;
+    height: 1.5em;
+    overflow: hidden;
   }
   &__content {
     display: flex;
@@ -59,6 +74,9 @@ export default {
   &__icon {
     display: flex;
     margin-right: 10px;
+  }
+  &__title {
+    display: inline;
   }
 }
 </style>

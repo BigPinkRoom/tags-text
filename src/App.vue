@@ -8,6 +8,13 @@
           title="Текстовый заголовок"
         />
       </div>
+      <div class="tags-text__wrapper">
+        <TagsText
+          align="left"
+          :text="textContent"
+          title="Текстовый заголовок"
+        />
+      </div>
     </v-main>
   </v-app>
 </template>
